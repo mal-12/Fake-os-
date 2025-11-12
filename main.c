@@ -10,7 +10,7 @@ void Demo();
 
 void SettingIns();
 
-int MenuAll(int i);
+int MenuAll(int i, void (*func1)(),void (*func2)(),void (*func3)(),void (*func4)());
 
 int main ()
 {
@@ -71,22 +71,22 @@ void SettingIns()
     }
 }
 
-int MenuAll(int i)
+int MenuAll(int i, void (*func1)(),void (*func2)(),void (*func3)(),void (*func4)())
 {
     switch (i)
     {
     case 1:
-        Install();
+        func1();
         break;
     case 2:
-        Demo();
+        func2();
         break;
     
     case 3:
-        SettingIns();
+        func3();
         break;
     case 4:
-        printf("Exiting Fake OS. Goodbye!\n");
+        func4();
         break;
     
     default:
